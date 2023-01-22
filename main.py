@@ -26,7 +26,7 @@ async def index():
     return RedirectResponse(url="/docs")
 
 
-@app.get("/items")
+@app.get("/items", summary="Get all items in inventory or a specific item by ID")
 async def get_item(item_id: Optional[int] = None):
     if item_id is None:
         return inventory
