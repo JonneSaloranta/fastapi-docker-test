@@ -35,11 +35,9 @@ async def get_item(item_id: Optional[int] = None):
     return inventory[item_id]
 
 
-@app.post("/add_item/{item_id}")
-async def add_item(item_id: int, item: Item):
-    if item_id in inventory:
-        return {"Error": "Item ID already exists!"}
-
+@app.post("/add_item/")
+async def add_item(item: Item):
+    item_id = len(inventory) + 1
     inventory[item_id] = {"name": item.name, "price": item.price, "brand": item.brand}
     return inventory[item_id]
 
