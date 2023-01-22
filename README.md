@@ -1,4 +1,4 @@
-# A test repo for docker-compose automated building for an API service
+# A test repo | docker-compose automated building for an API service
 
 ## Docker compose
 
